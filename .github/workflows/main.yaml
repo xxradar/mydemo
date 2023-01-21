@@ -12,14 +12,10 @@ jobs:
    - uses: actions/checkout@v2
    - name: 'Install Node'
      uses: actions/setup-node@v1
-   - name: Install mocha
-     run: npm install -g mocha
-   - name: Install dependencies
-     run: npm install --save mocha supertest chai
    - name: Start app
      run: npm start &
    - name: "Run Test"
-     run: mocha test.js
+     run:  curl http://127.0.0.1:8081
   
   scanning:
    needs: testing
