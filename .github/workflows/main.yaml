@@ -6,6 +6,15 @@ on:
    branches: [ master ]
  
 jobs:
+  testing:
+   runs-on: ubuntu-latest    
+   steps:
+   - uses: actions/checkout@v2
+   - name: 'Install Node'
+     uses: actions/setup-node@v1
+   - name: Install mocha
+     uses: actions/setup-node@v1
+  
   scanning:
    runs-on: ubuntu-latest
    steps:
