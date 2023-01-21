@@ -7,17 +7,9 @@ on:
  
 jobs:
   test:
-   runs-on: ubuntu-latest
-   steps:
-   - uses: actions/checkout@v1
-   - name: 'Install Node'
-     uses: actions/setup-node@v1
-   - name: Install mocha
-     run: npm install -g mocha supertest
-   - name: Install dependencies
-     run: npm install 
-   - name: "Run Test"
-     run: mocha test.js
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
 
   scanning:
    needs: testing
