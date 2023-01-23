@@ -48,10 +48,10 @@ jobs:
           context: .
           push: true
           tags: xxradar/app:${{ github.run_id }}
-      
-    kubescape:
-      runs-on: ubuntu-latest
-      steps:
+  
+  kubescape:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
       - uses: kubescape/github-action@main
         continue-on-error: true
