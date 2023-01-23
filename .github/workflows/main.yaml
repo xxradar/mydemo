@@ -47,4 +47,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: xxradar/app:latest
+          tags: xxradar/app:${{ github.run_id }}
