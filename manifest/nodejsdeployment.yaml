@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodejsapp
-        image: xxradar/app:latest
+        image: xxradar/app:3986884754
         ports:
         - containerPort: 8081
