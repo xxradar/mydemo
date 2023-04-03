@@ -73,5 +73,11 @@ jobs:
         KUBE_HOST: ${{ secrets.KUBE_HOST }}
         KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
       with:
-#        args: --insecure-skip-tls-verify apply -f manifest/*.yaml
-       args: --insecure-skip-tls-verify set image deployment/nodejs-deployment nodejsapp=xxradar/app:${{ github.run_id }}
+        args: --insecure-skip-tls-verify apply -f manifest/*.yaml
+    - uses: actions-hub/kubectl@master
+      env:
+        KUBE_TOKEN: ${{ secrets.TOKEN }}
+        KUBE_HOST: ${{ secrets.KUBE_HOST }}
+        KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
+      with:
+        args: --insecure-skip-tls-verify set image deployment/nodejs-deployment nodejsapp=xxradar/app:${{ github.run_id }}
