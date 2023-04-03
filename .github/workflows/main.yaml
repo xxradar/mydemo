@@ -68,7 +68,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Kubernetes CLI
-      uses: steebchen/kubectl@v1
+      uses: steebchen/kubectl@v2
       with:
         version: 'latest'
         kubeconfig: ${{ secrets.TOKEN }}
