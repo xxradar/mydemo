@@ -63,6 +63,7 @@ jobs:
   deployk8s:
     name: Deployk8s
     runs-on: ubuntu-latest
+    steps:
     - uses: actions-hub/kubectl@master
       env:
         KUBE_HOST: ${{ secrets.KUBE_HOST }}
