@@ -63,6 +63,7 @@ jobs:
   deployk8s:
     name: Deployk8s
     runs-on: ubuntu-latest
+    needs: kubescape
     steps:
     - uses: actions/checkout@v2
     - uses: actions-hub/kubectl@master
