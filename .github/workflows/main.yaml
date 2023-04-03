@@ -28,7 +28,7 @@ jobs:
        docker run -i --mount type=bind,source="$(pwd)",target=/scan  registry.fortidevsec.forticloud.com/fdevsec_sast:latest
       
   docker:
-    needs: testing
+    needs: scanning
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
