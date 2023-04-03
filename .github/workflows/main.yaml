@@ -61,20 +61,11 @@ jobs:
           files: "manifest/*.yaml"
 
   deployk8s:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Kubernetes CLI
-      uses: steebchen/kubectl@v2.0.0
+    - uses: actions-hub/kubectl@master
+      env:
+        KUBE_HOST: ${{ secrets.KUBE_HOST }}
+        KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
+        KUBE_TOKEN: ${{ secrets.TOKEN }}
       with:
-        version: 'latest'
-        TOKEN: ${{ secrets.TOKEN }}
-
-    - name: Deploy to Kubernetes
-      run: |
-        echo $TOKEN
-        kubectl --token=$TOKEN --server=https://13.36.64.116:6443 --insecure-skip-tls-verify  apply -f manifest/*.yaml
+        args: get pods
 
