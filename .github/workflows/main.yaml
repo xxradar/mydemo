@@ -71,5 +71,5 @@ jobs:
         KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
         KUBE_TOKEN: ${{ secrets.TOKEN }}
       with:
-        args: --insecure-skip-tls-verify apply -f manifest/nodejsdeployment.yaml
+        args: --insecure-skip-tls-verify apply -f manifest/*.yaml
 
