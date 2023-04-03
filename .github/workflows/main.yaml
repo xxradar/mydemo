@@ -69,9 +69,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions-hub/kubectl@master
       env:
-        KUBE_HOST: ${{ secrets.KUBE_HOST }}
-        KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
         KUBE_TOKEN: ${{ secrets.TOKEN }}
       with:
-        args: --insecure-skip-tls-verify apply -f manifest/*.yaml
+        args: --insecure-skip-tls-verify apply --server=https://13.36.64.116:6443 -f manifest/*.yaml
 
