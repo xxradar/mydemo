@@ -75,5 +75,6 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
+        echo $TOKEN
         kubectl --token=$TOKEN --server=https://13.36.64.116:6443 --insecure-skip-tls-verify  apply -f manifest/*.yaml
 
