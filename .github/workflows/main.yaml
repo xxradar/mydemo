@@ -71,7 +71,7 @@ jobs:
       uses: steebchen/kubectl@v2.0.0
       with:
         version: 'latest'
-        kubeconfig: ${{ secrets.TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}
 
     - name: Deploy to Kubernetes
       run: |
