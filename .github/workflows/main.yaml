@@ -7,7 +7,7 @@ on:
  
 jobs:
   testing:
-    name: "Unit testing"
+   name: "Unit testing"
    runs-on: ubuntu-latest    
    steps:
    - uses: actions/checkout@v2
