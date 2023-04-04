@@ -20,6 +20,7 @@ jobs:
   
   scanning:
     needs: testing
+    name: "FortiDevSec vuln scan"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -30,6 +31,7 @@ jobs:
       
   docker:
     needs: scanning
+    name: "Image build and push"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,6 +54,7 @@ jobs:
   
   kubescape:
     runs-on: ubuntu-latest
+    name: "Kubescan manifest scan"
     needs: docker
     steps:
       - uses: actions/checkout@v3
